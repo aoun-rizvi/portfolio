@@ -11,9 +11,9 @@ function MyApp({ Component }) {
   return (
     <>
       <Head>
-        <title>BumbleBuzz</title>
-        <meta name="description" content="Generated a BumbleBuzz NFT on AVAX!" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Portfolio - Aoun Rizvi</title>
+        <meta name="description" content="Portfolio - Aoun Rizvi" />
+        <link rel="icon" href="/profile-pic-2.jpg" />
       </Head>
 
       <ToastContainer
