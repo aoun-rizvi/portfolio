@@ -11,13 +11,7 @@ module.exports = {
   images: {
     domains: [
       'localhost',
-      'bumblebuzz.io', 'ipfs.bumblebuzz.io',
-      'ipfs', 'ipfs.io', 'gateway.pinata.cloud',
-      'dynamodb-local',
-      'amazonaws.com',
-      'aurorascan.dev', 'etherscan.io', 'coingecko.com',
-      'mydomain', 'mydomain.com', 'service-name.mydomain.com',
-      'amazonaws.com', ' https://bumblebuzz.s3.us-east-1.amazonaws.com', 'bumblebuzz.s3.us-east-1.amazonaws.com'
+      'aounrizvi.com'
     ],
   },
 }
