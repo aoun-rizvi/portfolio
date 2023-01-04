@@ -8,7 +8,7 @@ const TEXT_STYLE = 'text-gray-900 bg-white border border-gray-300 focus:outline-
 
 export default function About() {
   return (
-    <about className='pt-28 pb-1 w-full h-fit bg-gray-700 flex flex-col flex-wrap items-center text-center justify-center gap-4'>
+    <about className='pt-20 pb-2 w-full h-fit bg-gray-700 flex flex-col flex-wrap items-center text-center justify-center gap-4'>
 
       <div className='py-2 w-full'>
         <p className='text-3xl sm:text-5xl md:text-6xl text-gray-200 underline decoration-sky-600'>About</p>
