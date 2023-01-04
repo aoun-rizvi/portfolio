@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+import API from '@/components/Api';
 import Image from 'next/image';
 import BgPic2 from '@/public/profile-pic-2.jpg';
 import PicBumbleBuzz from '@/public/nft-marketplace/bumblebuzz-2.png';
@@ -15,11 +18,33 @@ import HeadlessDisclosure from '@/components/HeadlessDisclosure';
 
 
 export default function Home() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
   const ABOUT_PIC_STYLE = 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-900 dark:hover:border-gray-600 dark:focus:ring-gray-700';
   const ABOUT_PIC_TEXT = 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm xsm:text-lg xl:text-xl px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-900 dark:hover:border-gray-600 dark:focus:ring-gray-700';
   const COMMISSION_TEXT_STYLE = 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-900 dark:hover:border-gray-600 dark:focus:ring-gray-700';
   const INCENTIVE_TEXT_STYLE = 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-900 dark:hover:border-gray-600 dark:focus:ring-gray-700';
   const GALLERY_BOX_STYLE = 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-1 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700';
+
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      name: name,
+      email: email,
+      message: message
+    };
+    try {
+      await API.email.send(payload).then(res => {
+        console.log('res.data:', res.data);
+      });
+    } catch (e) {
+      console.error(e, 'Error sending email!');
+    }
+  }
 
   return (
     <main className='flex flex-nowrap flex-col items-center px-0 py-0 w-full bg-black'>
@@ -271,7 +296,7 @@ export default function Home() {
       </div>
 
       {/* contact */}
-      <div className='relative w-full [height:calc(100vh)] xsm:[height:calc(75vh)] sm:[height:calc(50vh)]'>
+      <div className='relative w-full [height:calc(50vh)]'>
         <Image alt="bricks" className='z-0' src={BgAboutUs} layout="fill" objectFit="cover" quality={100} />
         <div className='flex flex-wrap items-center text-center justify-center z-10 w-full'>
 
@@ -279,11 +304,39 @@ export default function Home() {
             <div className='py-2 w-full'>
               <p className='text-3xl sm:text-5xl md:text-6xl text-gray-700 underline decoration-indigo-600'>Contact</p>
             </div>
-            <div className='flex flex-col flex-wrap max-w-md'>
-              {/* <p className='text-2xl text-indigo-600'>BumbleBuzz on Aurora</p> */}
-              <div className='w-full text-xl'>
-                <p>Please feel free to contact me via my socials, or by directly emailing me at <a className='text-blue-500' href="mailto:aounrizvi@live.com">aounrizvi@live.com</a>.</p>
-              </div>
+            <div className='py-4 px-1 flex flex-col flex-wrap w-full max-w-md'>
+              <form onSubmit={(e) => {sendEmail(e)}} method="POST" className="text-left space-y-2">
+                <div className='flex flex-row items-center text-center justify-center'>
+                  <input
+                    type="name"
+                    id="name"
+                    placeholder="Subject"
+                    required
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    onChange={(e) => {setName(e.target.value)}}
+                  />
+                </div>
+                <div className='flex flex-row items-center text-center justify-center'>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="your@email.com"
+                    required
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    onChange={(e) => {setEmail(e.target.value)}}
+                  />
+                </div>
+                <div className='flex flex-row items-center text-center justify-center'>
+                  <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Leave a comment..."
+                    className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    onChange={(e) => {setMessage(e.target.value)}}
+                  />
+                </div>
+                <button type="submit" className="py-2 px-4 text-sm font-medium text-center text-white rounded-lg bg-sky-700 sm:w-fit hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Send Email</button>
+              </form>
             </div>
           </div>
 
