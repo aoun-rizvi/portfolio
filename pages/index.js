@@ -80,6 +80,8 @@ export default function Home() {
                   <span className='text-left indent-5'>I have experience with numerous databses (e.g. PostgressSQL, AWS DynamoDB), back-end services in JAVA, and front-end frameworks (e.g. React, Angular, NextJS).</span>
                   <br />
                   <span className='text-left indent-5'>One of the other areas I have started to focus on is the Web 3.0 world. I have experience working with Solidity contracts and developing dApps.</span>
+                  <br />
+                  <span className='text-left'><a href='resume/Aoun Rizvi.pdf' download className={`${GALLERY_BOX_STYLE} text-lg font-bold`}>Download Resume</a></span>
                 </p>
               </div>
             </div>
