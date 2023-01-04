@@ -3,7 +3,7 @@ import Image from 'next/image';
 import PicCommission from '@/public/art/galaxy.jpg';
 import BgAboutUs from '@/public/bg/bricks.jpg';
 
-const GALLERY_BOX_STYLE = 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-1 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700';
+const PIC_STYLE = 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-1 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700';
 
 
 export default function Blog() {
@@ -24,7 +24,7 @@ export default function Blog() {
                 <div className='px-2 py-2 flex flex-row w-full gap-4'>
 
                   <div className='w-full grow w-40 sm:w-56 border rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer'>
-                    <div className={`flex flex-col lg:flex-1 w-full ${GALLERY_BOX_STYLE}`}>
+                    <div className={`flex flex-col lg:flex-1 w-full ${PIC_STYLE}`}>
                       <a href='https://google.ca' target='blank'>
                         <div className='relative w-full [height:calc(25vh)]'>
                           <Image alt="galaxy" src={PicCommission} layout="fill" objectFit="cover" quality={50} />
@@ -34,7 +34,7 @@ export default function Blog() {
                     </div>
                   </div>
                   <div className='w-full grow w-40 sm:w-56 border rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer'>
-                    <div className={`flex flex-col lg:flex-1 w-full ${GALLERY_BOX_STYLE}`}>
+                    <div className={`flex flex-col lg:flex-1 w-full ${PIC_STYLE}`}>
                       <a href='https://google.ca' target='blank'>
                         <div className='relative w-full [height:calc(25vh)]'>
                           <Image alt="galaxy" src={PicCommission} layout="fill" objectFit="cover" quality={50} />
@@ -44,7 +44,7 @@ export default function Blog() {
                     </div>
                   </div>
                   <div className='w-full grow w-40 sm:w-56 border rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer'>
-                    <div className={`flex flex-col lg:flex-1 w-full ${GALLERY_BOX_STYLE}`}>
+                    <div className={`flex flex-col lg:flex-1 w-full ${PIC_STYLE}`}>
                       <a href='https://google.ca' target='blank'>
                         <div className='relative w-full [height:calc(25vh)]'>
                           <Image alt="galaxy" src={PicCommission} layout="fill" objectFit="cover" quality={50} />
@@ -54,7 +54,7 @@ export default function Blog() {
                     </div>
                   </div>
                   <div className='w-full grow w-40 sm:w-56 border rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer'>
-                    <div className={`flex flex-col lg:flex-1 w-full ${GALLERY_BOX_STYLE}`}>
+                    <div className={`flex flex-col lg:flex-1 w-full ${PIC_STYLE}`}>
                       <a href='https://google.ca' target='blank'>
                         <div className='relative w-full [height:calc(25vh)]'>
                           <Image alt="galaxy" src={PicCommission} layout="fill" objectFit="cover" quality={50} />
@@ -64,7 +64,7 @@ export default function Blog() {
                     </div>
                   </div>
                   <div className='w-full grow w-40 sm:w-56 border rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer'>
-                    <div className={`flex flex-col lg:flex-1 w-full ${GALLERY_BOX_STYLE}`}>
+                    <div className={`flex flex-col lg:flex-1 w-full ${PIC_STYLE}`}>
                       <a href='https://google.ca' target='blank'>
                         <div className='relative w-full [height:calc(25vh)]'>
                           <Image alt="galaxy" src={PicCommission} layout="fill" objectFit="cover" quality={50} />
