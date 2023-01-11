@@ -22,19 +22,15 @@ export default function LandingArea() {
 
             <div className='py-2 flex flex-row gap-x-2'>
               <ButtonWrapper
-                onClick={() => window.open('https://twitter.com/0xBumbleBuzz/', 'blank')}
+                onClick={() => window.open('https://twitter.com/aounrizvi_/', 'blank')}
                 classes="gap-x-1 items-center bg-gray-100 hover:bg-gray-300 focus:ring-gray-500"
               ><TwitterSolid height={24} width={24} /></ButtonWrapper>
               <ButtonWrapper
-                onClick={() => window.open('https://medium.com/bumblebuzz/', 'blank')}
+                onClick={() => window.open('https://aounrizvi.medium.com/', 'blank')}
                 classes="gap-x-1 items-center bg-gray-100 hover:bg-gray-300 focus:ring-gray-500"
               ><MediumSolid height={24} width={24} /></ButtonWrapper>
               <ButtonWrapper
-                onClick={() => window.open('https://discord.gg/FgF3Pp5H', 'blank')}
-                classes="gap-x-1 items-center bg-gray-100 hover:bg-gray-300 focus:ring-gray-500"
-              ><DiscordSolid height={24} width={24} /></ButtonWrapper>
-              <ButtonWrapper
-                onClick={() => window.open('https://github.com/0xroshi/', 'blank')}
+                onClick={() => window.open('https://github.com/aoun-rizvi/', 'blank')}
                 classes="gap-x-1 items-center bg-gray-100 hover:bg-gray-300 focus:ring-gray-500"
               ><GithubSolid height={24} width={24} /></ButtonWrapper>
             </div>
