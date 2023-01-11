@@ -72,7 +72,7 @@ export default function Projects() {
 
               <div className='py-2 flex flex-row gap-x-2'>
                 <ButtonWrapper
-                  onClick={() => window.open('https://github.com/0xroshi/nftgenerate/', 'blank')}
+                  onClick={() => window.open('https://github.com/aoun-rizvi/nftgenerate/', 'blank')}
                   classes="gap-x-1 items-center text-black font-bold bg-gray-100 hover:bg-gray-300 focus:ring-gray-500"
                 >GitHub</ButtonWrapper>
               </div>
